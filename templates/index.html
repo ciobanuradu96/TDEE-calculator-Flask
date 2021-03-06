@@ -1,0 +1,61 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{super()}}
+{{ fontawesome_html() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{%block content%}
+<div class="container">
+    <div class="row">
+        <h1 class="display-1">Learn How Many Calories You Burn Every Day</h1>
+    </div>
+    <div class="row">
+        <form method="POST">
+            <div class="row mb-3">
+                <label for="mass" class="col-xs-2 col-form-label">Weight</label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="mass" name="mass">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="height" class="col-xs-2 col-form-label">Height</label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="height" name="height">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="age" class="col-xs-2 col-form-label">Age</label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="age" name="age">
+                </div>
+            </div>
+
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-xs-2 pt-0">Gender</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sex" id="gridRadios1" value="male" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            <p><i class="fas fa-male"></i></p>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sex" id="gridRadios2" value="female">
+                        <label class="form-check-label" for="gridRadios2">
+                            <p><i class="fas fa-female"></i></p>
+                        </label>
+                    </div>
+            </fieldset>
+            <div class="row mb-3">
+                <label for="age" class="col-xs-2 col-form-label"><small class="text-muted">Body
+                        Fat%(optional)</small> </label>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" id="body_fat" name="body_fat">
+                </div>
+            </div>
+            <button type="submit" value="Submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+    {{result}}
+    {% endblock %}
