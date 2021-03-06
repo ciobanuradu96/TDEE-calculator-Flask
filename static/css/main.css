@@ -17,3 +17,25 @@ body{
 .fa-female{
     color: pink;
 }
+#banner{
+    padding:50%;    
+    margin-bottom:50%;
+}
+form {
+    text-align: center;
+  }
+
+  html,body,.container {
+    height:100%;
+}
+.container {
+    display:table;
+    width: 100%;
+    margin-top: -50px;
+    padding: 50px 0 0 0; /*set left/right padding according to needs*/
+    box-sizing: border-box;
+}
+
+.display-1{
+    text-align: center;
+}
