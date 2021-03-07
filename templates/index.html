@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-4">
 
             <form method="POST">
                 <div class="row mb-3 ">
@@ -58,10 +58,38 @@
                         <input type="text" class="form-control" id="body_fat" name="body_fat">
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-md-6 col-form-label"> Activity Level </div>
+                    <div class="col-md-6">
+                        <select name=activity_lvl  class="form-control">
+                            <option selected value=0>Sedentary</option>
+                            <option value=1>Light Exercise</option>
+                            <option value=2>Moderate Exercise</option>
+                            <option value=3>Heavy Exercise</option>
+                            <option value=4>Athlete</option>
+                        </select>
+                    </div>       
+                  
+                </div>
                 <button type="submit" value="Submit" class="btn btn-primary">Calculate</button>
             </form>
         </div>
+        <div class="col-md-8">
+            <ul> 
+                <li>Your basal metabolim rate is {{bmr}}</li>
+                <li>Your total energy expenditure for a Sedentary activity level is {{tde_lvl_0}}</li>
+                <li>Your total energy expenditure for a Light Exercise activity level is {{tde_lvl_1}}</li>
+                <li>Your total energy expenditure for a Moderate Exercise activity level is {{tde_lvl_2}}</li>
+                <li>Your total energy expenditure for a Heavy Exercise activity level is {{tde_lvl_3}}</li>
+                <li>Your total energy expenditure for a Athlete level activity is {{tde_lvl_4}}</li>
+            </ul>
+            {{result}}
+            {{all_tdees}}
+        </div>
     </div>
+    
+       
+   
 </div>
-{{result}}
+
 {% endblock %}
