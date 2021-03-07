@@ -1,25 +1,15 @@
-{% extends 'bootstrap/base.html' %}
-{% block styles %}
-{{super()}}
-{{ fontawesome_html() }}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-{% endblock %}
+{% extends "base.html" %}
 
 {%block content%}
 <div class="container">
-    <div class="row">
-        <div class="col col-md-8 col-md-offset-2">
-            <h1 class="display-1">Learn How Many Calories You Burn Every Day</h1>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row py-5">
         <div class="col-md-4">
 
             <form method="POST">
-                <div class="row mb-3 ">
+                <div class="row mb-2 ">
                     <label for="mass" class="col-md-6 col-form-label">Weight</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="mass" name="mass">
+                        <input type="text" class="form-control " id="mass" name="mass">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -61,35 +51,55 @@
                 <div class="row mb-3">
                     <div class="col-md-6 col-form-label"> Activity Level </div>
                     <div class="col-md-6">
-                        <select name=activity_lvl  class="form-control">
+                        <select name=activity_lvl class="form-control">
                             <option selected value=0>Sedentary</option>
                             <option value=1>Light Exercise</option>
                             <option value=2>Moderate Exercise</option>
                             <option value=3>Heavy Exercise</option>
                             <option value=4>Athlete</option>
                         </select>
-                    </div>       
-                  
+                    </div>
+
                 </div>
                 <button type="submit" value="Submit" class="btn btn-primary">Calculate</button>
             </form>
         </div>
         <div class="col-md-8">
-            <ul> 
-                <li>Your basal metabolim rate is {{bmr}}</li>
-                <li>Your total energy expenditure for a Sedentary activity level is {{tde_lvl_0}}</li>
-                <li>Your total energy expenditure for a Light Exercise activity level is {{tde_lvl_1}}</li>
-                <li>Your total energy expenditure for a Moderate Exercise activity level is {{tde_lvl_2}}</li>
-                <li>Your total energy expenditure for a Heavy Exercise activity level is {{tde_lvl_3}}</li>
-                <li>Your total energy expenditure for a Athlete level activity is {{tde_lvl_4}}</li>
-            </ul>
-            {{result}}
-            {{all_tdees}}
+            <table class=>
+                <tr>
+                    <td>Basal Metabolic Rate</td>
+                    <td>{{bmr}}</td>
+                </tr>
+                <tr>
+                    <td>Sedentary</td>
+                    <td>{{all_activity[0]}}</td>
+                </tr>
+                <tr>
+                    <td>Light Exercise</td>
+                    <td>{{all_activity[1]}}</td>
+                </tr>
+                <tr>
+                    <td>Moderate Exercise</td>
+                    <td>{{all_activity[2]}}</td>
+                </tr>
+                <tr>
+                    <td>Heavy Exercise</td>
+                    <td>{{all_activity[3]}}</td>
+                </tr>
+                <tr>
+                    <td>Athlete</td>
+                    <td>{{all_activity[4]}}</td>
+                </tr>
+            </table>
+
         </div>
+
+
     </div>
-    
-       
-   
 </div>
+
+
+
+
 
 {% endblock %}

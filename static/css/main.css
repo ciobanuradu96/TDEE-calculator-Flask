@@ -1,42 +1,18 @@
-body{
-    margin:0;
-    font-family:Sans-serif;
-    font-size:25px;
-}
-.form-control{
-    padding-left: 0px;
-    margin-left: 0px;
-}
-.ccol-form-label{
-    padding-right: 0px !important;
-    margin-right: 0px !important;
-}
+
 .fa-male{
     color: blue;
 }
 .fa-female{
     color: pink;
 }
-#banner{
-    padding:50%;    
-    margin-bottom:50%;
-}
+
 form {
-    text-align: center;
+    text-align: right;
   }
 
-  html,body,.container {
-    height:100%;
+.activity_level{
+    border:30px;
 }
-.container {
-    display:table;
-    width: 100%;
-    margin-top: -50px;
-    padding: 50px 0 0 0; /*set left/right padding according to needs*/
-    box-sizing: border-box;
+.container{
+    background-color: rgb(230, 224, 224);
 }
-
-.display-1{
-    text-align: center;
-}
-
