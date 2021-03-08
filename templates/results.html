@@ -1,45 +1,72 @@
 {% extends "index.html" %}
 {%block result%}
-<row>
-    <div class="col-md-4 bg-white my-1 px-1" > Your Maintenance calories: </div>
-    <div class="col-md-4 bg-white my-1 px-1" > 
-    
+<div class="row">
+    <div class="col-6 bg-white shadow my-1 rounded py-5 px-3"> Your Maintenance calories:{{tdee}}
+        <p id="text">Based on your stats, the best estimate for your maintenance calories is
+            {{tdee}} calories per day based on the ..... Formula, which is widely known
+            to be the most accurate ---when body fat is provided---. The table on the right shows the difference
+            if you were to have selected a different activity level.</p>
+    </div>
+    <div class="col-6  my-1 px-1">
+
         <table>
-        <tr>
-            <td>Basal Metabolic Rate</td>
-            <td>{{bmr}}</td>
-        </tr>
-        <tr>
-            <td>Sedentary</td>
-            <td>{{ all_activity[0] }}</td>
-        </tr>
-        <tr>
-            <td>Light Exercise</td>
-            <td>{{all_activity[1]}}</td>
-        </tr>
-        <tr>
-            <td>Moderate Exercise</td>
-            <td>{{all_activity[2]}}</td>
-        </tr>
-        <tr>
-            <td>Heavy Exercise</td>
-            <td>{{all_activity[3]}}</td>
-        </tr>
-        <tr>
-            <td>Athlete</td>
-            <td>{{all_activity[4]}}</td>
-        </tr>
-    </table></div></row>
-    <row>
-        <div class="col-md-6 bg-white" ></div>
-    <div class="col-md-6 bg-white my-1 px-1" > BMI {{test}} </div> 
- </row>
-    
+            <tr>
+                <td>Basal Metabolic Rate </td>
+                <td>{{bmr}}</td>
+            </tr>
+            {%if selected==0%} <tr class="test"> {%else%}
+            <tr>{%endif%}
+                <td>Sedentary</td>
+                <td>{{ all_activity[0] }}</td>
+            </tr>
+            {%if selected==1%} <tr class="test"> {%else%}
+            <tr>{%endif%}
+                <td>Light Exercise</td>
+                <td>{{all_activity[1]}}</td>
+            </tr>
+            {%if selected==2%} <tr class="test"> {%else%}
+            <tr>{%endif%}
+                <td>Moderate Exercise</td>
+                <td>{{all_activity[2]}}</td>
+            </tr>
+            {%if selected==3%} <tr class="test"> {%else%}
+            <tr>{%endif%}
+                <td>Heavy Exercise</td>
+                <td>{{all_activity[3]}}</td>
+            </tr>
+            {%if selected==4%} <tr class="test"> {%else%}
+            <tr>{%endif%}
+                <td>Athlete</td>
+                <td>{{all_activity[4]}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 bg-white my-1 px-5">Ideal Weight: 72-77 kg
+        Your ideal body weight is estimated to be between 72-77 kg based on the various formulas listed below. These
+        formulas are based on your height and represent averages so don't take them too seriously, especially if you
+        lift weights.
+
+        G.J. Hamwi Formula (1964) 77 kg
+        B.J. Devine Formula (1974) 75 kg
+        J.D. Robinson Formula (1983) 73 kg
+        D.R. Miller Formula (1983)</div>
+    <div class="col-md-6 bg-white my-1 px-1"> BMI Score: {{test}}
+        Your BMI is {{test}}, which means you are classified as …
+
+        18.5 or less Underweight
+        18.5 – 24.99 Normal Weight
+        25 – 29.99 Overweight
+        30+ Obese
+    </div>
+</div>
 
 
 
-   
-   
+
+
+
 </div>
 
 {% endblock %}

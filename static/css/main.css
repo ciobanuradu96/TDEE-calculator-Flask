@@ -28,3 +28,22 @@ form{
     background-color:#1985A1;
     font-size: 20px;
 }
+
+label{
+    text-align:center;
+}
+
+legend{
+    text-align:center;
+}
+#text{
+    font-size: 14px;
+}
+
+td{
+    font-size: 18px;
+}
+
+.test{
+    background-color: red;
+}
