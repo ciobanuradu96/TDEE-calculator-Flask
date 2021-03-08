@@ -1,27 +1,26 @@
 {% extends "base.html" %}
 
 {%block content%}
-<div class="container">
-    <div class="row py-5">
-        <div class="col-md-4">
-
-            <form method="POST">
+<div class="container py-5">
+    <div class="row px-2">
+        <div class="col-md-4 form-group">
+            <form class="py-5 px-5 shadow p-3 mb-5 rounded" method="POST" action="{{url_for('results')}}">
                 <div class="row mb-2 ">
                     <label for="mass" class="col-md-6 col-form-label">Weight</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control " id="mass" name="mass">
+                        <input type="number" step="0.01" class="form-control " id="mass" name="mass">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="height" class="col-md-6 col-form-label">Height</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="height" name="height">
+                        <input type="number" class="form-control" id="height" name="height">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="age" class="col-md-6 col-form-label">Age</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="age" name="age">
+                        <input type="number" class="form-control" id="age" name="age">
                     </div>
                 </div>
                 <fieldset class="row mb-3">
@@ -45,7 +44,7 @@
                     <label for="age" class="col-md-6 col-form-label"><small class="text-muted">Body
                             Fat%(optional)</small> </label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="body_fat" name="body_fat">
+                        <input type="number" class="form-control" id="body_fat" name="body_fat">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -64,42 +63,10 @@
                 <button type="submit" value="Submit" class="btn btn-primary">Calculate</button>
             </form>
         </div>
-        <div class="col-md-8">
-            <table class=>
-                <tr>
-                    <td>Basal Metabolic Rate</td>
-                    <td>{{bmr}}</td>
-                </tr>
-                <tr>
-                    <td>Sedentary</td>
-                    <td>{{all_activity[0]}}</td>
-                </tr>
-                <tr>
-                    <td>Light Exercise</td>
-                    <td>{{all_activity[1]}}</td>
-                </tr>
-                <tr>
-                    <td>Moderate Exercise</td>
-                    <td>{{all_activity[2]}}</td>
-                </tr>
-                <tr>
-                    <td>Heavy Exercise</td>
-                    <td>{{all_activity[3]}}</td>
-                </tr>
-                <tr>
-                    <td>Athlete</td>
-                    <td>{{all_activity[4]}}</td>
-                </tr>
-            </table>
-
+        <div class="col-md-8 shadow p-3 mb-5 rounded" id="results">
+            {% block result%} {% endblock %}
         </div>
-
-
     </div>
 </div>
-
-
-
-
 
 {% endblock %}

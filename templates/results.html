@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{%block result%}
+<row>
+    <div class="col-md-4 bg-white my-1 px-1" > Your Maintenance calories: </div>
+    <div class="col-md-4 bg-white my-1 px-1" > 
+    
+        <table>
+        <tr>
+            <td>Basal Metabolic Rate</td>
+            <td>{{bmr}}</td>
+        </tr>
+        <tr>
+            <td>Sedentary</td>
+            <td>{{ all_activity[0] }}</td>
+        </tr>
+        <tr>
+            <td>Light Exercise</td>
+            <td>{{all_activity[1]}}</td>
+        </tr>
+        <tr>
+            <td>Moderate Exercise</td>
+            <td>{{all_activity[2]}}</td>
+        </tr>
+        <tr>
+            <td>Heavy Exercise</td>
+            <td>{{all_activity[3]}}</td>
+        </tr>
+        <tr>
+            <td>Athlete</td>
+            <td>{{all_activity[4]}}</td>
+        </tr>
+    </table></div></row>
+    <row>
+        <div class="col-md-6 bg-white" ></div>
+    <div class="col-md-6 bg-white my-1 px-1" > BMI {{test}} </div> 
+ </row>
+    
+
+
+
+   
+   
+</div>
+
+{% endblock %}

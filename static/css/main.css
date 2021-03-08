@@ -14,5 +14,17 @@ form {
     border:30px;
 }
 .container{
-    background-color: rgb(230, 224, 224);
+    background-color:#C5C3C6;
+}
+
+.col-md-4 form{
+    background-color:#4C5C68 ;
+}
+form{
+    color:#DCDCDD;
+    font-size: 18px;
+}
+#results{
+    background-color:#1985A1;
+    font-size: 20px;
 }

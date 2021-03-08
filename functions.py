@@ -32,6 +32,8 @@ def all_tdees(bmr):
         all_tdees.append(int(bmr*activity_rates[counter]))
     return all_tdees
 
+def bmi(mass,height):
+    return mass/pow((height/100),2)
 
 '''
 1.2 points for a person who does little to no exercise
