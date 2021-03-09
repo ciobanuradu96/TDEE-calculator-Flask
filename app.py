@@ -16,7 +16,7 @@ def results():
     height = int(request.form['height'])
     age = int(request.form['age'])
     sex = request.form['sex']
-    body_fat = float(request.form['body_fat'])
+    body_fat = request.form['body_fat']
     activity_lvl = int(request.form.get('activity_lvl'))
     if body_fat == '':
         bmr = round(Mifflin(mass, height, age, sex))
@@ -27,7 +27,8 @@ def results():
     test = bmi(mass, height)
     tdee = round(your_tdee(bmr, activity_lvl))
     selected = activity_lvl
-    return render_template('results.html', bmr=bmr, all_activity=all_activity, test=test, tdee=tdee, selected=selected)
+    gender=sex
+    return render_template('results.html', bmr=bmr, all_activity=all_activity, test=test, tdee=tdee, selected=selected, body_fat=body_fat,gender=gender)
 
 
 if __name__ == "__main__":

@@ -13,37 +13,41 @@ form {
 .activity_level{
     border:30px;
 }
-.container{
-    background-color:#C5C3C6;
-}
 
-.col-md-4 form{
-    background-color:#4C5C68 ;
+
+.col-md-3 form{
+    background-color:#f3f3f3 ;
 }
 form{
-    color:#DCDCDD;
+    color:#000000;
     font-size: 18px;
 }
 #results{
-    background-color:#1985A1;
     font-size: 20px;
 }
 
 label{
-    text-align:center;
+    text-align:right;
 }
 
 legend{
-    text-align:center;
+    text-align:right;
 }
 #text{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 td{
     font-size: 18px;
 }
 
-.test{
-    background-color: red;
+.bg-select{
+    background-color:#c5c5c5;
+}
+.icon{
+    margin-bottom: 0;
+    text-align: left;
+}
+#gridRadios2{
+ margin-left: -1em;
 }
