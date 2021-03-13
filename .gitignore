@@ -1,0 +1,6 @@
+env
+workspace.code-workspace
+.venv
+.vscode
+__pycache__
+.DS_Store
